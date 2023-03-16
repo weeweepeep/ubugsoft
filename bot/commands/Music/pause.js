@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'pause',
+    cooldown: 5,
     description: "Pauses a song",
     category: "Music",
     usage: "?pause",

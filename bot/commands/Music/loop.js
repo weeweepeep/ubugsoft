@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'loop',
+    cooldown: 3,
     aliases: ["l"],
     description: "Loops the track or queue",
     category: "Music",

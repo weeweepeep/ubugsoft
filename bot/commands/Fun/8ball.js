@@ -6,7 +6,7 @@ module.exports = {
   description: 'Asks a question and let the bot determine your fate :sparkler:',
   usage: "?8ball <question>",
   async execute(client, message, args, Discord) {
-    if (!args[0]) return message.channel.send('Please ask a full question!'); // return if no question is commenced
+    if (!args[0]) return message.reply('Please ask a full question!'); // return if no question is commenced
     const replies = ['Yes.', 'No.', 'Never.', 'Definitely.', 'Ask again later.']; // random responses
 
     const result = Math.floor(Math.random() * replies.length); // Get a random respons for the array
@@ -17,9 +17,9 @@ module.exports = {
         .setAuthor('🎱 The 8 Ball says...')
         .setColor('ORANGE').addField('Question:', question)
         .addField('Answer:', replies[result]);
-      await message.channel.send({embeds: [embed]}) // send embed message
+      await message.reply({embeds: [embed]}) // send embed message
     } else {
-      await message.channel.send(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); // no permissins so bot will default to a raw message
+      await message.reply(`**Question:**\n${question}\n**Answer:**\n${replies[result]}`); // no permissins so bot will default to a raw message
     }
   },
 };

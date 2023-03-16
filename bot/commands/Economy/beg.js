@@ -19,6 +19,6 @@ module.exports = {
         },
       }
     );
-    return message.channel.send(`${message.author.username}, you begged and received  :money_with_wings:${randomNumber} cash`);
+    return message.reply(`${message.author.username}, you begged and received  :money_with_wings:${randomNumber} cash`);
   },
 };

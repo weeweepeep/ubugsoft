@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'shuffle',
+    cooldown: 3,
     description: "Shuffles the songs in queue",
     category: "Music",
     usage: "?shuffle",

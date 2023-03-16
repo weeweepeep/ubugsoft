@@ -16,7 +16,7 @@ if (message.author.bot || !message.guild) return
 
         if (hasLeveledUp) {
              
-                message.channel.send({content: `Congrats ${message.author}, you've leveled up and recieved **10000** cash!`, files: [card] })
+                message.reply({content: `Congrats ${message.author}, you've leveled up and recieved **10000** cash!`, files: [card] })
            profileModel.findOneAndUpdate(
         {
           userID: message.author.id,

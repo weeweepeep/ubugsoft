@@ -76,7 +76,7 @@ client.on("messageCreate", async (message) => {
         .setTitle("Missing permissions")
         .setColor("RED")
         .setDescription(`Missing Permissions: \`${invalidPerms}\``)
-        return message.channel.send({ embeds: [permissionembed]});
+        return message.reply({ embeds: [permissionembed]});
       }
     }
     

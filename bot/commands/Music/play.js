@@ -4,6 +4,7 @@ const Discord = require('discord.js')
 const { Guild } = require('discord.js')
 module.exports = {
     name: 'play',
+    cooldown: 5,
     aliases: ['p'],
     description: "Plays a song",
     usage: "?p <song/vid-URL>",

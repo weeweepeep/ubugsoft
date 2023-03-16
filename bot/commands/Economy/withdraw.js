@@ -26,7 +26,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`You withdrew :money_with_wings: **${amount}** of cash into your wallet`);
+      return message.reply(`You withdrew :money_with_wings: **${amount}** of cash into your wallet`);
     } catch (err) {
       console.log(err);
     }

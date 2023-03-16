@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'resume',
+    cooldown: 5,
     description: "Resumes a song",
     category: "Music",
     usage: "?resume",

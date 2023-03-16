@@ -8,7 +8,7 @@ module.exports = {
   usage: "?give @<user> <cash>",
   async execute(client, message, args, Discord, cmd, profileData) {
       if (message.author.id !== "775236227141599285") return message.reply("Only my creator can use this command!")
-      if (!args.length) return message.channel.send("You need to mention a player to give them cash");
+      if (!args.length) return message.reply("You need to mention a player to give them cash");
     const amount = args[1];
     const target = message.mentions.users.first();
     if (!target) return message.reply("That user does not exist");
@@ -30,7 +30,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`This player has been removed 💸**${amount}** of cash!`);
+      return message.reply(`This player has been removed 💸**${amount}** of cash!`);
     } catch (err) {
       console.log(err);
     }

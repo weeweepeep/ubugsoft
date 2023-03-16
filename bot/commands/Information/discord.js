@@ -5,6 +5,6 @@ module.exports = {
     category: "Information",
     description: "invite to support server!",
     execute(client, message, args, Discord){
-        message.channel.send('https://discord.gg/4VcHRsS7bD');
+        message.reply('https://discord.gg/4VcHRsS7bD');
     }
 }

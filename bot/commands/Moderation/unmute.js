@@ -23,9 +23,9 @@ module.exports = {
            
             memberTarget.roles.remove(muteRole.id);
             memberTarget.roles.add(mainRole.id);
-            message.channel.send({ embeds: [embed]});
+            message.reply({ embeds: [embed]});
         } else {
-            message.channel.send('cant find that member!');
+            message.reply('cant find that member!');
         }
     }
 }

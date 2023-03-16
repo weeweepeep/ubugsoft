@@ -24,7 +24,7 @@ module.exports = {
 
             if(!args[1]){
             memberTarget.roles.add(muteRole.id);
-            message.channel.send({ embeds: [embed]});
+            message.reply({ embeds: [embed]});
             return
             }
            
@@ -34,7 +34,7 @@ module.exports = {
         .setDescription(`**<@${target.id}>** has been muted for ${ms(ms(args[1]))}`)
         .setFooter(`Muted by ${message.author.tag}`)
         .setColor('RED')
-            message.channel.send({ embeds: [tempembed]});
+            message.reply({ embeds: [tempembed]});
 
             setTimeout(function() {
             memberTarget.roles.remove(muteRole.id);
@@ -44,7 +44,7 @@ module.exports = {
             
  
         }  else {
-            message.channel.send("u couldnt mute that member!")
+            message.reply("u couldnt mute that member!")
         } 
     }
 }

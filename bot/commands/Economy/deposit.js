@@ -24,7 +24,7 @@ module.exports = {
         }
       );
 
-      return message.channel.send(`You deposited :money_with_wings: **${amount}** of cash into your bank`);
+      return message.reply(`You deposited :money_with_wings: **${amount}** of cash into your bank`);
     } catch (err) {
       console.log(err);
     }

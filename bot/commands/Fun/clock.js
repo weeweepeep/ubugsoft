@@ -38,6 +38,6 @@ module.exports = {
       .addField("Australia, Sydney", Sydney, true)
       .setColor("#FF0000");
 
-    message.channel.send({embeds: [embed]});
+    message.reply({embeds: [embed]});
   },
 };

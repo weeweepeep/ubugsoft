@@ -16,6 +16,6 @@ return message.reply("please specify the time for slowmode!")}
         .addField('Time:', `> ${time} seconds!`, false)
         .addField('Responsible Moderator:', `> ${message.author}`, false)
         .addField('Server:', `> ${message.guild.name}`, false)
-        message.channel.send({ embeds: [embed] })
+        message.reply({ embeds: [embed] })
     },
 };

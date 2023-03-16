@@ -13,8 +13,8 @@ module.exports = {
      async execute(client, message, args, Discord, cmd, profileData) {
 
         const user = message.member
-        let ht = (args[1] || "heads")
-        if(args[1] == "t") {
+        let ht = (args[0] || "heads")
+        if(args[0] == "t") {
             let ht = "tails"
             if(!ht) return message.reply(`What You Chose? heads or tails?`)
   if(args[0] == "all") {
@@ -24,7 +24,7 @@ module.exports = {
           }
           
           const coin = ['heads', 'tails'] // Coin Options
-          let moneyhelp = new MessageEmbed()
+          const moneyhelp = new MessageEmbed()
       .setColor("RED")
       .setDescription(`🛑 Specify the amount u wanna bet!`); 
            
@@ -38,14 +38,14 @@ module.exports = {
   
     const hdsortls = new MessageEmbed()
     .setColor("RED")
-    .setDescription("🛑 it should onlt be heads or tails!")
+    .setDescription("🛑 it should only be heads or tails!")
       
                
-              if (amount > profileData.coins) return message.channel.send({embeds: [moneymore]});
-              if(amount < 500) return message.channel.send({ embeds: [lessmoney]})
-              if (!amount) return message.channel.send({embeds: [moneyhelp]});
+              if (amount > profileData.coins) return message.reply({embeds: [moneymore]});
+              if(amount < 500) return message.reply({ embeds: [lessmoney]})
+              if (!amount) return message.reply({embeds: [moneyhelp]});
            
-              if(!coin.includes(ht)) return message.reply(`It Should Be heads or tails Only`) // If Something Other Is Provided
+              if(!coin.includes(ht)) return message.reply({embeds: [hdsortls]}) // If Something Other Is Provided
               if(isNaN(amount)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
         
 
@@ -63,7 +63,7 @@ module.exports = {
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Got :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                     await profileModel.findOneAndUpdate(
              {
           userID: message.author.id,
@@ -82,7 +82,7 @@ module.exports = {
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Lost :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                 await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -117,9 +117,9 @@ module.exports = {
   .setDescription("🛑 it should only be heads or tails!")
     
              
-            if (amount > profileData.coins) return message.channel.send({embeds: [moneymore]});
-            if(amount < 500) return message.channel.send({ embeds: [lessmoney]})
-            if (!amount) return message.channel.send({embeds: [moneyhelp]});
+            if (amount > profileData.coins) return message.reply({embeds: [moneymore]});
+            if(amount < 500) return message.reply({ embeds: [lessmoney]})
+            if (!amount) return message.reply({embeds: [moneyhelp]});
             if(amount > 150000) return message.reply("the largest bet is **$150000**")
             if(!coin.includes(ht)) return message.reply(`It Should Be heads or tails Only`) // If Something Other Is Provided
             if(isNaN(amount)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
@@ -139,7 +139,7 @@ module.exports = {
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Got :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                     await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -158,7 +158,7 @@ module.exports = {
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Lost :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                 await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -171,7 +171,7 @@ module.exports = {
       );
             }}
         } else {
-        let ht = (args[1] || "heads")
+        let ht = (args[0] || "heads")
         if(!ht) return message.reply(`What You Chose? heads or tails?`) // If No heads Or tails Provided
           
        
@@ -201,9 +201,9 @@ amount = 150000;
       .setDescription("🛑 it should only be heads or tails!")
         
                  
-                if (amount > profileData.coins) return message.channel.send({embeds: [moneymore]});
-                if(amount < 500) return message.channel.send({ embeds: [lessmoney]})
-                if (!amount) return message.channel.send({embeds: [moneyhelp]});
+                if (amount > profileData.coins) return message.reply({embeds: [moneymore]});
+                if(amount < 500) return message.reply({ embeds: [lessmoney]})
+                if (!amount) return message.reply({embeds: [moneyhelp]});
                 if(amount > 150000) return message.reply("the largest bet is **$150000**")
                 if(!coin.includes(ht)) return message.reply(`It Should Be heads or tails Only`) // If Something Other Is Provided
                 if(isNaN(amount)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
@@ -223,7 +223,7 @@ amount = 150000;
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Got :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                     await profileModel.findOneAndUpdate(
              {
           userID: message.author.id,
@@ -242,7 +242,7 @@ amount = 150000;
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Lost :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                 await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -283,9 +283,9 @@ return message.reply("the largest bet is $150000")
       .setDescription("🛑 it should only be heads or tails!")
         
                  
-                if (amount > profileData.coins) return message.channel.send({embeds: [moneymore]});
-                if(amount < 500) return message.channel.send({ embeds: [lessmoney]})
-                if (!amount) return message.channel.send({embeds: [moneyhelp]});
+                if (amount > profileData.coins) return message.reply({embeds: [moneymore]});
+                if(amount < 500) return message.reply({ embeds: [lessmoney]})
+                if (!amount) return message.reply({embeds: [moneyhelp]});
                 if(amount > 150000) return message.reply("the largest bet is **$150000**")
                 if(!coin.includes(ht)) return message.reply(`It Should Be heads or tails Only`) // If Something Other Is Provided
                 if(isNaN(amount)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
@@ -305,7 +305,7 @@ return message.reply("the largest bet is $150000")
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Got :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                     await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,
@@ -324,7 +324,7 @@ return message.reply("the largest bet is $150000")
                 .setDescription(`
 <@${user.id}> Fliped Coin Which Landed On **${fliped}** And They Lost :money_with_wings: **${amount}**
                 `)
-                message.channel.send({embeds: [embed]})
+                message.reply({embeds: [embed]})
                 await profileModel.findOneAndUpdate(
         {
           userID: message.author.id,

@@ -16,7 +16,7 @@ async execute(client, message, args, Discord) {
     .setTimestamp();
 
     message.delete()
-    message.channel.send('<:blurpleannouncements:859068819191496734> **What will be the title of voting?**').then(async msg => {
+    message.reply('<:blurpleannouncements:859068819191496734> **What will be the title of voting?**').then(async msg => {
     try {
      
       let msg = await message.channel.awaitMessages({filter,  max: 1, time: 15000, errors: ['time'] });
@@ -56,7 +56,7 @@ async execute(client, message, args, Discord) {
       msg.edit(`You ran out of time be faster next time. Re-run the command`); return
     }
 
-    await message.channel.send({embeds: [embed]}).then(sentMessage => sentMessage.react('🔴')).then(reaction => reaction.message.react('🔵'))
+    await message.reply({embeds: [embed]}).then(sentMessage => sentMessage.react('🔴')).then(reaction => reaction.message.react('🔵'))
   })
   }
   }

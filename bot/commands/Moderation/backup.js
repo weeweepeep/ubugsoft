@@ -88,7 +88,7 @@ module.exports = {
 
             }).catch((err) => {
 
-                return message.channel.send("No backup was found with that ID!")
+                return message.reply("No backup was found with that ID!")
 
             })
 
@@ -106,7 +106,7 @@ module.exports = {
 
             }).catch((err) => {
 
-                return message.channel.send("No backup was found with that ID!")
+                return message.reply("No backup was found with that ID!")
 
             })
 

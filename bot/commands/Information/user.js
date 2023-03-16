@@ -40,7 +40,7 @@ module.exports = {
                 .setColor(member.displayHexColor)
                 .setDescription(`**User:** \`${member.user.username}\` | \`#${member.user.discriminator}\`\n**ID:** \`${member.id}\`\n**Joined Discord At:** \`${moment(member.user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}\`\n**Joined Server on:** \`${moment(member.joinedAt).format('MMMM Do YYYY, h:mm:ss a')}\`\n**Roles [${roles.length || '0'}]: ** ${rolesname || `\`That user has no roles\``}`)
  
-              message.channel.send({embeds: [embed]});
+              message.reply({embeds: [embed]});
           
               }
 };

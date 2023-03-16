@@ -20,6 +20,6 @@ module.exports = {
         .setColor("RANDOM")
         .setURL(`https://www.reddit.com${res.permalink}`)
         .setFooter(`👍🏻 ${res.ups} 💭 ${res.num_comments}`);
-        message.channel.send({ embeds: [embed]});
+        message.reply({ embeds: [embed]});
     }
 }

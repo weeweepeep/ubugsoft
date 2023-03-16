@@ -10,7 +10,7 @@ module.exports = {
         let hand = [{ txt: 'Rock', emoji: '✊', index: 0 }, { txt: 'Paper', emoji: '🤚', index: 1 }, { txt: 'Scissors', emoji: '✌️', index: 2 }]; // Defining Moves
         let botMove = hand[Math.floor(Math.random() * 3)]; // Making a random move
 
-        let rpsMsg = await message.channel.send({ // Prompting user to make a move
+        let rpsMsg = await message.reply({ // Prompting user to make a move
             embeds: [
                 new MessageEmbed() // RPS embed
                     .setColor('RANDOM')

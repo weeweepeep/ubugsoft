@@ -32,7 +32,7 @@ module.exports = {
                 Maximum: 62, // Maximum Number
             }) // Will Show OutPut From 8(Minimum) To 70(Minimum+Maximum)(8+62)
 
-            message.channel.send(`Starting To Hack ${mention.user.username}`).then(message => { // Edit Message
+            message.reply(`Starting To Hack ${mention.user.username}`).then(message => { // Edit Message
                 setTimeout(function () {
                     message.edit(`Logging In To Discord Account...`)
                 }, 2000)

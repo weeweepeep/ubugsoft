@@ -18,6 +18,6 @@ module.exports = {
       .setDescription(`${mention} is ` + rng + "% Gay🌈")
       .setColor("LUMINOUS_VIVID_PINK")
 
-    message.channel.send({ embeds: [howgayembed]})
+    message.reply({ embeds: [howgayembed]})
   },
 };

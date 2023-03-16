@@ -32,6 +32,6 @@ module.exports = {
             else sentence += e
         }
 
-        message.channel.send(sentence)
+        message.reply(sentence)
     }
 }

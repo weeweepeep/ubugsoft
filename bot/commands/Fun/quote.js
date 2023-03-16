@@ -53,7 +53,7 @@ module.exports = {
             .addField("quote:", quotes[answer])
         
 
-            message.channel.send({ embeds: [embed] })
+            message.reply({ embeds: [embed] })
 
         
     }

@@ -31,10 +31,10 @@ money = 150000
   .setDescription("🛑 u dont have enough money!");
     
              
-    if (money > profileData.coins) return message.channel.send({embeds: [moneymore]});
-    if(money < 500) return message.channel.send({ embeds: [lessmoney]})
+    if (money > profileData.coins) return message.reply({embeds: [moneymore]});
+    if(money < 500) return message.reply({ embeds: [lessmoney]})
     if(isNaN(money)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
-    if (!money) return message.channel.send({embeds: [moneyhelp]});
+    if (!money) return message.reply({embeds: [moneyhelp]});
    
     let number = []
     for (let i = 0; i < 3; i++) { number[i] = Math.floor(Math.random() * slotItems.length); }
@@ -95,10 +95,10 @@ if (number[0] == "🥶" && number[1] == "🥶" && number[2] == "🥶")  {
   .setColor("RED")
   .setDescription("🛑 u dont have enough money!");
     
-    if (money > profileData.coins) return message.channel.send({embeds: [moneymore]});
+    if (money > profileData.coins) return message.reply({embeds: [moneymore]});
     if(isNaN(money)) return message.reply(`Amount Isn't A Number`) // If Amount Is Not A Number
-    if(money < 500) return message.channel.send({ embeds: [lessmoney]})
-    if (!money) return message.channel.send({embeds: [moneyhelp]});
+    if(money < 500) return message.reply({ embeds: [lessmoney]})
+    if (!money) return message.reply({embeds: [moneyhelp]});
     if(money > 150000) return message.reply("the largest bet is **$150000**")
 
     let number = []
@@ -118,7 +118,7 @@ if (number[0] == "🥶" && number[1] == "🥶" && number[2] == "🥶")  {
         let slotsEmbed1 = new MessageEmbed()
             .setDescription(`${slotItems[number[0]]} | ${slotItems[number[1]]} | ${slotItems[number[2]]}\n\nYou won ${money} coins`)
             .setColor("GREEN")
-        message.channel.send({embeds: [slotsEmbed1]})
+        message.reply({embeds: [slotsEmbed1]})
         await profileModel.findOneAndUpdate(
             {
               userID: message.author.id,
@@ -134,7 +134,7 @@ if (number[0] == "🥶" && number[1] == "🥶" && number[2] == "🥶")  {
         let slotsEmbed = new MessageEmbed()
             .setDescription(`${slotItems[number[0]]} | ${slotItems[number[1]]} | ${slotItems[number[2]]}\n\nYou lost ${money} coins`)
             .setColor("RED")
-        message.channel.send({embeds: [slotsEmbed]})
+        message.reply({embeds: [slotsEmbed]})
         await profileModel.findOneAndUpdate(
             {
               userID: message.author.id,

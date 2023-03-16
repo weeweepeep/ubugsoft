@@ -41,7 +41,7 @@ module.exports = {
 			},
 		];
 
-		const msg = await message.channel.send({
+		const msg = await message.reply({
 			content: randomPos,
 			components: componentsArray,
 		});

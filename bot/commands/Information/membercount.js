@@ -12,6 +12,6 @@ module.exports = {
         .setDescription(`**${message.guild.name} has ${membersInServer} members in the server**`)
         .setThumbnail(message.guild.iconURL({ size: 4096, dynamic: true}))
         .setTimestamp()
-        message.channel.send({ embeds: [embed]})
+        message.reply({ embeds: [embed]})
     }
 }

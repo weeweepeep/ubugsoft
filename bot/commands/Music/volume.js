@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'volume',
+    cooldown: 6,
     aliases: ["vol"],
     description: "Changes or checks the volume of the current song",
     usage: "?volume <0-100>",

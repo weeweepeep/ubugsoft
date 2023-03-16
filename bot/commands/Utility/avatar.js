@@ -13,7 +13,7 @@ module.exports = {
           .setAuthor(message.author.username + "'s Avatar", message.author.displayAvatarURL)
           .setImage(message.author.displayAvatarURL({size: 4096, dynamic: true}))  
         
-        message.channel.send({embeds: [embed]})
+        message.reply({embeds: [embed]})
     }
 
     const avatarList = message.mentions.users.map(user => {
@@ -29,7 +29,7 @@ module.exports = {
           .setAuthor(Username + "'s Avatar", AvatarURL)
           .setImage(AvatarURL)
         
-        message.channel.send({embeds: [embed]})
+        message.reply({embeds: [embed]})
     }
 }
 }

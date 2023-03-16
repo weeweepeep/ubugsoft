@@ -20,28 +20,28 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setDescription(`:x:**u must mention the user u want to warn**`)
                 .setColor(wrong)
-                return message.channel.send({ embeds: [embed]})
+                return message.reply({ embeds: [embed]})
             }
 
             if(target.id === client.user.id){
                 const embed = new MessageEmbed()
                 .setDescription(`:x:**u cannot warn bots!**`)
                 .setColor(wrong)
-                return message.channel.send({ embeds: [embed]})
+                return message.reply({ embeds: [embed]})
             }
 
             if(target.id === message.author.id) {
                 const embed = new MessageEmbed()
                 .setDescription(`**:x:  u cant warn urself!**`)
                 .setColor(wrong)
-                return message.channel.send({ embeds: [embed]})
+                return message.reply({ embeds: [embed]})
             }
 
             if(message.member.roles.highest.comparePositionTo(message.mentions.members.first().roles.highest) < 1) {
                 const embed = new MessageEmbed()
                 .setDescription(`:x:**u cant warn a user that has a higher or same role as u!`)
                 .setColor(wrong)
-                return message.channel.send({ embeds: [embed]})
+                return message.reply({ embeds: [embed]})
             }
 
             let reason = args.slice(1).join(" ")
@@ -50,7 +50,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setDescription(`:x:**please provide a valid reason to warn that user!**`)
                 .setColor(wrong)
-                return message.channel.send({ embeds: [embed]})
+                return message.reply({ embeds: [embed]})
             }
 
             db.add(`warns_${target.id}`, 1)
@@ -59,7 +59,7 @@ module.exports = {
             const embed = new MessageEmbed()
             .setDescription(`:white_check_mark:**${target.username} has been warned ${x} times!**`)
             .setColor(right)
-            message.channel.send({ embeds: [embed]})
+            message.reply({ embeds: [embed]})
 
             try{
 
@@ -74,7 +74,7 @@ module.exports = {
                 const embed = new MessageEmbed()
                 .setDescription(`**cannot send messages to that user!**`)
                 .setColor(wrong)
-                return message.channel.send({embeds: [embed]})
+                return message.reply({embeds: [embed]})
             }
 
            
@@ -84,7 +84,7 @@ module.exports = {
             const embed = new MessageEmbed()
             .setDescription(`**${cross} an unknown error occured!**`)
             .setColor(wrong)
-            return message.channel.send({embeds: [embed]})
+            return message.reply({embeds: [embed]})
         }
     }
 }

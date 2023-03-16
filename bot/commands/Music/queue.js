@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
     name: 'queue',
+    cooldown: 3,
     description: "Displays all the songs in queue",
     category: "Music",
     usage: "?queue",

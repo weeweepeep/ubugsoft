@@ -62,7 +62,7 @@ module.exports = {
 
             const amount = Math.floor(Math.random() * 1000) + 500 // Minimum = 500 , Maximum = 2000
 
-            message.channel.send(`<@${user.id}> Where Do You Want To Search?\n\`${location.join("` `")}\``) // Send Message With Options
+            message.reply(`<@${user.id}> Where Do You Want To Search?\n\`${location.join("` `")}\``) // Send Message With Options
 
             const filter = (m) => {
                 return m.author.id === user.id // To Check Is Messages User ID Is Same As Who Used Command
@@ -85,7 +85,7 @@ module.exports = {
                     .setDescription(`
 You Searched For Money In **${searched}** And Found **$${amount.toLocaleString()}**
                 `)
-                message.channel.send({ embeds: [embed]})
+                message.reply({ embeds: [embed]})
                 await profileModel.findOneAndUpdate(
              {
           userID: message.author.id,
@@ -100,7 +100,7 @@ You Searched For Money In **${searched}** And Found **$${amount.toLocaleString()
             })
             collector.on('end', collected => { // If User Didn't Answer In Time
                 if(collected.size === 0) {
-                    message.channel.send(`<@${user.id}> Your Time Finished, Their Was **$${amount.toLocaleString()}** In Those Place`)
+                    message.reply(`<@${user.id}> Your Time Finished, Their Was **$${amount.toLocaleString()}** In Those Place`)
                     collector.stop()
                 }
             })
